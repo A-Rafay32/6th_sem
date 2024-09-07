@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Details</title>
+    <style>
+        .dialog-box {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            margin: 50px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .dialog-box label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .dialog-box input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .dialog-box button {
+            padding: 10px 20px;
+            background-color: #ea0606;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .dialog-box button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dialog-box">
+    <label for="employeeNo">Employee No:</label>
+    <input type="text" id="employeeNo" name="employeeNo">
+
+    <label for="employeeName">Employee Name:</label>
+    <input type="text" id="employeeName" name="employeeName">
+
+    <label for="department">Department:</label>
+    <input type="text" id="department" name="department">
+
+    <label for="designation">Designation:</label>
+    <input type="text" id="designation" name="designation">
+
+    <label for="hiredDate">Hired Date:</label>
+    <input type="date" id="hiredDate" name="hiredDate">
+
+    <label for="salary">Salary:</label>
+    <input type="number" id="salary" name="salary">
+
+    <button type="button" style="background-color: #0a53b3;" onclick="submitDetails()">Insert</button>
+    <button type="button" style="background-color: #ea0606;" onclick="submitDetails()">Cancel</button>
+</div>
+
+<script>
+    function submitDetails() {
+        var employeeNo = document.getElementById('employeeNo').value;
+        var employeeName = document.getElementById('employeeName').value;
+        var department = document.getElementById('department').value;
+        var designation = document.getElementById('designation').value;
+        var hiredDate = document.getElementById('hiredDate').value;
+        var salary = document.getElementById('salary').value;
+
+        alert("Employee Details Submitted:\n" +
+              "Employee No: " + employeeNo + "\n" +
+              "Employee Name: " + employeeName + "\n" +
+              "Department: " + department + "\n" +
+              "Designation: " + designation + "\n" +
+              "Hired Date: " + hiredDate + "\n" +
+              "Salary: " + salary);
+    }
+</script>
+
+</body>
+</html>

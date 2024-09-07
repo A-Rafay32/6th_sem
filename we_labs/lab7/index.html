@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Form</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <div class="container">
+        <form id="itemForm">
+            <input type="text" id="itemName" placeholder="Item Name" required><br><br>
+
+            <input type="number" id="quantity" placeholder="Quantity" required><br><br>
+
+            <input type="number" id="price" placeholder="Price" required><br><br>
+
+            <select id="itemType" required>
+                <option value="medicine">Medicine</option>
+                <option value="grocery">Grocery</option>
+                <option value="cosmetics">Cosmetics</option>
+            </select><br><br>
+
+            <button type="button" onclick="addItem()">Add Item</button>
+        </form>
+
+        <h2>Total: $<span id="total">0.00</span></h2>
+        <div id="itemsContainer"></div>
+
+    </div>
+
+    <script>
+        let total = 0;
+
+        function addItem() {
+            const itemName = document.getElementById('itemName').value;
+            const quantity = document.getElementById('quantity').value;
+            const price = document.getElementById('price').value;
+            const itemType = document.getElementById('itemType').value;
+
+            total += quantity * price;
+            document.getElementById('total').innerText = total.toFixed(2);
+
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'item-div';
+            itemDiv.innerHTML = `
+                <p><strong>Item Name:</strong> ${itemName}</p>
+                <p><strong>Quantity:</strong> ${quantity}</p>
+                <p><strong>Price:</strong> $${price}</p>
+                <p><strong>Type:</strong> ${itemType}</p>
+                <p><strong>Item total:</strong> $${(quantity * price).toFixed(2)}</p>
+            `;
+
+            document.getElementById('itemsContainer').appendChild(itemDiv);
+            document.getElementById('itemForm').reset();
+        }
+    </script>
+</body>
+</html>

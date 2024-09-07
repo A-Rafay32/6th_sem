@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link rel="stylesheet" href="./Test.css">
+  <title>Document</title>
+</head>
+<body>
+     <div class="box">
+        <div class="left"> 
+            <div class="content">
+                <div class="innerContent"> 
+                    <h1>HELLO NEDIANS</h1>
+                    <h2>You are the best of the best</h2>
+                    <a href="www.facebook.com">Facebook</a>
+                    <a href="www.facebook.com">Twitter</a>
+                </div>        
+            </div>    
+        </div>
+        <div class="right"> 
+            <h1>LOGIN</h1>
+            <p>Don't have an account? <a href="#">Create Your Account</a> it takes less than a minute</p>
+            <div class="inputs">
+                <input id="username" type="text" placeholder="Username">
+                <br>
+                <input id="password" type="password" placeholder="Password">
+            </div>
+			<br>
+            <br>
+			<br>
+			<button onclick="validate()">Login</button>
+        </div>
+    </div>
+    <script>
+
+        function validate(){
+            var uname = document.getElementById("username").value;
+            var pword = document.getElementById("password").value;
+            if(uname == "Mubashir" && pword == "123456")
+            {
+                alert("Hello " + uname + ", You have successfully logged in.")
+                window.location.href = "./Home.html"
+            }else{
+                alert("Invalid credentials")
+            }
+        }
+
+        
+
+
+    </script>
+</body>
+</html>

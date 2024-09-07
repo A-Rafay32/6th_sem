@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link rel="stylesheet" href="./Test.css">
+  <title>Document</title>
+
+  <style>
+    .box{
+        padding:20px;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 300px;
+    }
+    
+    .formInput{
+        width:90%;
+    }
+
+    #userContainer {
+        display:flex;
+        flex-wrap: wrap; 
+        padding:10px;
+    }
+
+    #userContainer div {
+        border: 2px solid #5f4e1d;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        width:30%;
+        margin:auto;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    #userContainer img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+</style>
+
+</head>
+<body>
+     <div class="box">
+         <form>
+            <input id="name" class="formInput" type="text" placeholder="Name" required></input>
+            <input id="enroll" class="formInput" type="text" placeholder="Enrollment" required></input>
+            <input id="imageFile" class="formInput" type="file" accept="image/*" required > </input>
+            <button style="margin-top: 20px;" type="button" onclick="addRecord()">Add Record</button>
+         </form>
+     </div>
+
+    <div id="userContainer">
+        
+    </div>
+
+     <script>
+        function addRecord(){
+            var name = document.getElementById("name").value;
+            if(name.length < 3 || name.length > 20){
+                alert("Invalid Name")
+                return(0)
+            }
+
+            var enrl = document.getElementById("enroll").value;
+            if(!(/^([a-zA-Z]{2})([-]{1})([0-9]{5})$/.test(enrl))){
+                alert("Invalid Enrollment")
+                return(0)
+            }
+          
+            var userCard = document.createElement("div");
+            
+            var usernameElement = document.createElement("h2");
+            usernameElement.textContent = "Username: " + name;
+
+            var enrollmentElement = document.createElement("h2");
+            enrollmentElement.textContent = "Enrollment: " + enrl;
+
+            var imageElement = document.createElement("img");
+            var image = document.getElementById("imageFile").files[0];
+            imageElement.src = URL.createObjectURL(image);
+
+            // Append elements to user card
+            userCard.appendChild(usernameElement);
+            userCard.appendChild(enrollmentElement);
+            userCard.appendChild(imageElement);
+
+            // Append user card to container
+            document.getElementById("userContainer").appendChild(userCard);
+
+
+        }
+     </script>
+</body>
+
+</head>

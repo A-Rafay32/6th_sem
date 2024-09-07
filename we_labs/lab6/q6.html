@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <input type="text" id="textbox1">
+        <input type="text" id="textbox2">
+        <button type="button" onclick="verifyTextboxes()">Submit</button>
+    </form>
+
+    <script>
+        function verifyTextboxes() {
+            var inputs = document.querySelectorAll('input[type="text"]');
+            var allFilled = true;
+            var emptyTextboxId = '';
+            inputs.forEach(function (input) {
+                if (input.value === '') {
+                    alert('Textbox ' + input.id + ' is empty!');
+                    input.focus();
+                    allFilled = false;
+                    emptyTextboxId = input.id;
+                }
+            });
+            if (allFilled) {
+                alert('THANK YOU');
+            } else {
+                // Focus on the empty textbox after clicking OK on the alert
+                document.getElementById(emptyTextboxId).focus();
+            }
+        }
+    </script>
+</body>
+
+</html>

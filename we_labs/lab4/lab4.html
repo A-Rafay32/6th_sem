@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form autocomplete="on">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" autofocus placeholder="Enter your name" required><br><br>
+
+        <label for="telephone">Telephone:</label><br>
+        <input type="tel" id="telephone" name="telephone" placeholder="Enter telephone number"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+
+        <label for="email">Email address:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter email address" multiple required><br><br>
+
+        <label for="books">Books:</label><br>
+        <input list="booklist" id="books" name="books">
+        <datalist id="booklist">
+            <option value="Book 1">
+            <option value="Book 2">
+            <option value="Book 3">
+        </datalist><br><br>
+
+        <label for="quantity">Quantity (Maximum 5):</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" max="5"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

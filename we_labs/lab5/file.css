@@ -1,0 +1,41 @@
+h2 {
+    color: black;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#myHeading {
+    color: blue;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.orderItems {
+    color: chocolate;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+li {
+    color: black;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+    border: 1px solid black;
+}
+
+td {
+    padding: 18px;
+    border: 1px solid black;
+}
